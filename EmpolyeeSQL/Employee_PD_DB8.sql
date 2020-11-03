@@ -151,10 +151,6 @@ INNER JOIN Departments
 ON Departments.dept_no = Dept_Emp.dept_no
 WHERE dept_name= 'Sales' OR dept_name= 'Development';
 
-SELECT 
-
-
-
 
 --8 Frequency of employee last name in descending order--
 SELECT last_name,
@@ -162,3 +158,19 @@ COUNT (last_name) as my_count
 FROM Employees
 GROUP BY last_name
 ORDER BY my_count DESC;
+
+-- 3 --
+SELECT Dept_Manager.dept_no,
+Departments.dept_name,
+Employees.emp_no,
+Employees.last_name,
+Employees.first_name
+FROM Employees
+INNER JOIN Dept_Manager
+ON Employees.emp_no = Dept_Manager.emp_no
+INNER JOIN Departments
+ON Departments.dept_no = Dept_Manager.dept_no
+
+
+
+

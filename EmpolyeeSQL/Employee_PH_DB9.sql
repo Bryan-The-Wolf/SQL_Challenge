@@ -106,6 +106,18 @@ FROM Employees
 WHERE hire_date
 LIKE '%1986';
 
+-- 3 Management information  --
+SELECT Dept_Manager.dept_no,
+Departments.dept_name,
+Employees.emp_no,
+Employees.last_name,
+Employees.first_name
+FROM Employees
+INNER JOIN Dept_Manager
+ON Employees.emp_no = Dept_Manager.emp_no
+INNER JOIN Departments
+ON Departments.dept_no = Dept_Manager.dept_no
+
 -- 4 Employees by department --
 
 SELECT Employees.emp_no,
@@ -150,10 +162,6 @@ ON Employees.emp_no = Dept_emp.emp_no
 INNER JOIN Departments
 ON Departments.dept_no = Dept_Emp.dept_no
 WHERE dept_name= 'Sales' OR dept_name= 'Development';
-
-SELECT 
-
-
 
 
 --8 Frequency of employee last name in descending order--
