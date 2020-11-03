@@ -87,7 +87,7 @@ ALTER TABLE "Titles" RENAME TO Titles;
 SELECT * FROM Employees Limit 30;
 SELECT * FROM Salaries Limit 3;
 
--- Using join to look up salary information --
+--1 Using join to look up salary information --
 SELECT Employees.emp_no,
 Employees.last_name,
 Employees.first_name,
@@ -98,7 +98,7 @@ INNER JOIN Salaries
 ON Employees.emp_no = Salaries.emp_no
 ORDER BY last_name;
 
---looking up hire dates of year 1986 --
+--2 Looking up hire dates of year 1986 --
 SELECT first_name,
 last_name,
 hire_date
@@ -106,21 +106,21 @@ FROM Employees
 WHERE hire_date
 LIKE '%1986';
 
--- Looking for Hercules B --
+--5 Looking for Hercules B --
 SELECT first_name,
 last_name,
 sex
 FROM Employees
 WHERE last_name LIKE'B%' AND first_name = 'Hercules';
 
---frequency of employee last name in descending order--
+--8 Frequency of employee last name in descending order--
 SELECT last_name,
 COUNT (last_name) as my_count
 FROM Employees
 GROUP BY last_name
 ORDER BY my_count DESC;
 
---attempting Sales department question --
+--6 Atempting Sales department question --
 
 SELECT Employees.emp_no,
 Employees.last_name,
