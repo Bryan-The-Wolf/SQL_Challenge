@@ -107,6 +107,7 @@ WHERE hire_date
 LIKE '%1986';
 
 -- 3 Management information  --
+
 SELECT Dept_Manager.dept_no,
 Departments.dept_name,
 Employees.emp_no,
